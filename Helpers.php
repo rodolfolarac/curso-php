@@ -52,3 +52,22 @@ function slug(string $string): string
 
     return strtolower(utf8_decode($slug));
 }
+
+function saudacao(): string
+{
+    $hora  = date("H");
+    switch ($hora) {
+        case ($hora >= 0 && $hora  <= 5):
+            $saudacao = 'Boa Madrugada!';
+            break;
+        case ($hora >= 6 && $hora <= 12):
+            $saudacao =  'Bom dia!';
+            break;
+        case ($hora >= 13 && $hora <= 18):
+            $saudacao = "Boa tarde!";
+            break;
+        default:
+            $saudacao = "Boa noite!";
+    }
+    return $saudacao;
+}

@@ -20,3 +20,5 @@ echo "<hr>";
 echo slug("TESTE123");
 echo "<hr>";
 echo slug("Avatar - O caminho da agua");
+echo "<hr>";
+echo saudacao();
