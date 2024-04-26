@@ -18,3 +18,5 @@ var_dump(validarEmail("rodolfo@hotmail.com"));
 echo url('admin');
 echo "<hr>";
 echo slug("TESTE123");
+echo "<hr>";
+echo slug("Avatar - O caminho da agua");

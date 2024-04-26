@@ -42,5 +42,13 @@ function url(string $url): string
 
 function slug(string $string): string
 {
-    return $string;
+    $mapa['a'] = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]/?¨|;:.,\\\'<>°ºª  ';
+
+    $mapa['b'] = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                 ';
+    $slug = strtr(utf8_decode($string), utf8_decode($mapa['a']), $mapa['b']);
+    $slug = strip_tags(trim($slug));
+    $slug = str_replace(' ', '-', $slug);
+    $slug = str_replace(['-----', '----', '---', '--', '-'], '-', $slug);
+
+    return strtolower(utf8_decode($slug));
 }
