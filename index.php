@@ -1,24 +1,32 @@
 <?php
+date_default_timezone_set('America/Sao_Paulo');
 require_once 'sistema/configuracao.php';
 require_once './helpers.php';
-date_default_timezone_set('America/Sao_Paulo');
+include './sistema/Nucleo/Mensagem.php';
+
 //include 'configuracao.php';
 
-//declare(strict_types = 1) Não deixa que o PHP converta numeros em string com variavéis 
-//tipadas
+$msg = new Mensagem();
 
-$hora = date('d/m/Y H:i:s');
-echo "<h1>Exercícios</h1>";
-echo $hora;
-echo "<hr>";
-echo contarTempo('2024-04-25 06:00:15');
-echo "<hr>";
-var_dump(validarEmail("rodolfo@hotmail.com"));
 
-echo url('admin');
-echo "<hr>";
-echo slug("TESTE123");
-echo "<hr>";
-echo slug("Avatar - O caminho da agua");
-echo "<hr>";
-echo saudacao();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <?php
+    echo $msg->sucesso("TESTE")->renderizar();
+    ?>
+</body>
+
+</html>
