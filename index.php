@@ -25,7 +25,8 @@ $msg = new Mensagem();
 
 <body>
     <?php
-    echo $msg->sucesso("TESTE")->renderizar();
+    // echo $msg->sucesso("TESTE")->renderizar();
+    echo (new Mensagem())->alerta("Texto de Alerta");
     ?>
 </body>
 
